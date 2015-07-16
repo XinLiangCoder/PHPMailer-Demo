@@ -1,2 +1,8 @@
 # PHPMailer-Demo
-PHP 发送邮件，可以发送附件，下载可直接预览。
+利用PHPMailer发送邮件。
+
+demo中支持，发送附件。
+
+目前支持 SMTP 协议 ： smtp.qq.com 。
+
+下载后可直接预览。
