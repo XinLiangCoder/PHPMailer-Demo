@@ -1,0 +1,82 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>PHPMailer发送邮件</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/phpmailer.js"></script>
+        <script type="text/javascript" src="js/popover.js"></script>
+    </head>
+    <body>
+    <div class="container">
+        <h2>PHPMailer发送邮件</h2>
+
+        <!-- 来源邮箱 -->
+        <div class="input-group">
+            <span class="input-group-addon">发送邮箱</span>
+            <input type="text" id="source_email" class="form-control" placeholder="请输入发送邮箱" aria-describedby="basic-addon1" data-container="body" data-placement="bottom" data-content="请输入发送邮箱">
+        </div>
+
+        <!-- 邮箱密码 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <span class="input-group-addon">邮箱密码</span>
+            <input type="password" id="email_pwd" class="form-control" placeholder="请输入邮箱密码" aria-describedby="basic-addon1" data-container="body" data-placement="bottom" data-content="请输入邮箱密码">
+        </div>
+
+        <!-- 邮箱名称 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <span class="input-group-addon">邮箱名称</span>
+            <input type="text" id="source_name" class="form-control" placeholder="请输入邮箱名称（可为空）" aria-describedby="basic-addon1">
+        </div>
+
+        <!-- 回复邮箱 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <span class="input-group-addon">回复邮箱</span>
+            <input type="text" id="reply_email" class="form-control" placeholder="请输入回复邮箱（可为空）" aria-describedby="basic-addon1">
+        </div>
+
+        <!-- 回复名称 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <span class="input-group-addon">回复名称</span>
+            <input type="text" id="reply_name" class="form-control" placeholder="请输入回复名称（可为空）" aria-describedby="basic-addon1">
+        </div>
+
+        <!-- 给他发送 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <span class="input-group-addon">给他发送</span>
+            <input type="text" id="email_to" class="form-control" placeholder="请输入收件人邮箱" aria-describedby="basic-addon1" data-container="body" data-placement="bottom" data-content="请输入收件人邮箱">
+        </div>
+
+        <!-- 传输协议 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <input type="text" id="agreement_url" class="form-control" placeholder="" aria-describedby="basic-addon2" value="smtp.qq.com" data-container="body" data-placement="bottom" data-content="请输入传输协议">
+            <span class="input-group-addon">传输协议</span>
+        </div>
+
+        <!-- 传输端口 -->
+        <div class="input-group" style="margin-top: 5px;">
+            <input type="text" id="agreement_port" class="form-control" placeholder="" aria-describedby="basic-addon2" value="25" data-container="body" data-placement="bottom" data-content="请输入传输端口">
+            <span class="input-group-addon">传输端口</span>
+        </div>
+
+        <p style="margin-top: 10px;">
+            <button type="button" id="send_email" class="btn btn-success btn-lg btn-block">发送</button>
+            <button type="button" style="display: none;"  disabled id="loading" class="btn btn-success btn-lg btn-block">发送中...</button>
+        </p>
+
+        <div style="display: none;" class="alert alert-success" role="alert">
+            邮件发送成功，请注意查收！
+        </div>
+        <div style="display: none;" class="alert alert-danger" role="alert">
+            邮件发送失败，请联系管理员！
+        </div>
+    </div>
+    </body>
+</html>
+
