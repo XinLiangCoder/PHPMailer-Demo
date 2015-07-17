@@ -68,7 +68,7 @@ var PHPMailer={
                     'agreement_url'  : $("#agreement_url").val(),
                     'agreement_port' : $("#agreement_port").val()
                 },
-                asynic: false,
+                async: false,
                 dataType: "json",
                 beforeSend: function () {
                     /** 邮件发送中 **/
