@@ -70,12 +70,18 @@ var PHPMailer={
                 },
                 async: false,
                 dataType: "json",
-                beforeSend: function () {
+                beforeSend: function (xhr) {
+                    //pjax 实现
+                    //xhr.setRequestHeader('X-PJAX', 'true');
+
                     /** 邮件发送中 **/
                     $("#send_email").css('display','none');
                     $("#loading").show();
                 },
                 success: function (result) {
+                    //pjax 实现
+                    //history.pushState(null, '', '/PHPMailer-Demo');
+
                     $("#send_email").show();
                     $("#loading").hide();
                     if (result.code==='ok') {
